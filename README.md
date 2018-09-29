@@ -3,13 +3,13 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|index: true, null: false, unique: true|
-|mail|null: false, unique: true|
+|mail|string|null: false, unique: true|
 
 ### Association
 - has_many :groups
 - has_many :members
 
-##groupsテーブル
+## groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -44,4 +44,3 @@
 ### Association
 - belongs_to :user
 - belongs_to :group
-
