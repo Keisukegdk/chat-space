@@ -9,15 +9,18 @@
 - has_many :groups
 - has_many :members
 
+
 ## groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |name|string|index: true, null: false, unique: true|
+|member_id|integer|null: false|
 
 ### Association
 - has_many :users
 - has_many :members
+
 
 ## membersテーブル
 
@@ -25,7 +28,6 @@
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
-
 
 ### Association
 - belongs_to :group
