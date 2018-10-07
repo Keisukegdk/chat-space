@@ -1,0 +1,12 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+@mixin btn{
+  float:right;
+  color: #38AEF0;
+  text-decoration:none;
+  display:block;
+  text-align:center;
+}
