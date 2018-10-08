@@ -1,0 +1,39 @@
+@import "./variable";
+.side_content {
+  height: calc(100% - 30px);
+  width: 300px;
+  float: left;
+  .side_top {
+    height: 90px;
+    background-color: #253141;
+    color: $text-color;
+    .user_name {
+      line-height: 90px;
+      font-weight: bold;
+      font-size: 16px;
+      margin: 0 20px;
+      float: left;
+    }
+    .icon{
+      line-height: 90px;
+      float: right;
+      color: $text-color;
+      padding-right:20px;
+    }
+  }
+  .group_list {
+    height: calc(100% - 90px);
+    background-color: #2f3e51;
+    .group {
+      color: $text-color;
+      padding: 20px;
+      &__group_name{
+      padding-bottom: 5px;
+      font-size: 15px;
+      }
+      &__group_message{
+      font-size: 10px;
+      }
+    }
+  }
+}
