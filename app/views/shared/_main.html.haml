@@ -1,0 +1,28 @@
+.main_content
+  .main_header
+    = link_to 'Edit', '#', class: 'edit'
+    %h3.group_name テスト１
+    %p.member_name Member : ごうだけいすけ
+
+  .body_main
+    %ul.messages
+      %li.top_message
+        %p.top_message__message_name ごうだけいすけ
+        %p.top_message__message_date 2018/10/03
+        %p.top_message__message_text aaaa
+
+      %li.message_list
+        %p.message_list__message_name ごうだけいすけ
+        %p.message_list__message_date 2018/10/03
+        %p.message_list__message_text bbbb
+
+      %li.message_list
+        %p.message_list__message_name ごうだけいすけ
+        %p.message_list__message_date 2018/10/03
+        %p.message_list__message_text cccc
+
+  .message_form
+    .message
+      .message_inside Type a message
+      %i.fas.fa-images
+    = link_to 'Send', '#', class: 'send'
