@@ -1,12 +1,13 @@
 .main_content {
   width: calc(100vw - 300px);
-  height: calc(100% - 30px);
-  float: right;
+  height: 100%;
+  float: left;
   position: relative;
   .main_header {
-    height: 90px;
+    height: 100px;
     width: 100%;
     border: 1px solid #eeeeee;
+    box-sizing: border-box;    ////使い方分からないので後で調べる
     .edit {
       @include btn;
       border: 1px solid #38AEF0;
