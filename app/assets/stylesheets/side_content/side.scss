@@ -1,3 +1,4 @@
+@import "config/variable";
 .side_content {
   height: 100%;
   width: 300px;
@@ -7,27 +8,27 @@
     background-color: #253141;
     color: $text-color;
     .user_name {
-      line-height: 100px;
+      line-height: 90px;
       font-weight: bold;
       font-size: 16px;
-      padding: 0 0 0 20px;
+      margin: 0 20px;
       float: left;
     }
     .icon{
-      line-height: 100px;
-      color: $text-color;
-      padding-right: 20px;
+      line-height: 90px;
       float: right;
+      color: $text-color;
+      padding-right:20px;
     }
   }
   .group_list {
-    height: calc(100% - 100px);
+    height: calc(100% - 90px);
     background-color: #2f3e51;
     .group {
       color: $text-color;
-      margin: 0 20px;
+      padding: 20px;
       &__group_name{
-      padding: 20px 0 5px 0;
+      padding-bottom: 5px;
       font-size: 15px;
       }
       &__group_message{

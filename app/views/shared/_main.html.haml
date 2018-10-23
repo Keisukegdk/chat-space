@@ -2,16 +2,27 @@
   .main_header
     = link_to 'Edit', '#', class: 'edit'
     %h3.group_name テスト１
-    %p.member_name Member : ゴウダケイスケ
+    %p.member_name Member : ごうだけいすけ
 
-  .message
-    = render partial: 'shared/message', collection: @messages, as: :message
+  .body_main
+    %ul.messages
+      %li.top_message
+        %p.top_message__message_name ごうだけいすけ
+        %p.top_message__message_date 2018/10/03
+        %p.top_message__message_text aaaa
 
-  .main_footer
-    = form_for [@group, @message] do |f|
-      = f.text_field :body, class: 'message-form', placeholder: 'type a message'
-      .file-form
-        = f.label :image, class: 'file-form__image' do
-          = fa_icon 'picture-o', class: 'icon'
-          = f.file_field :image, class: 'hidden'
-      = f.submit 'Send', class: 'form__submit'
+      %li.message_list
+        %p.message_list__message_name ごうだけいすけ
+        %p.message_list__message_date 2018/10/03
+        %p.message_list__message_text bbbb
+
+      %li.message_list
+        %p.message_list__message_name ごうだけいすけ
+        %p.message_list__message_date 2018/10/03
+        %p.message_list__message_text cccc
+
+  .message_form
+    .message
+      .message_inside Type a message
+      %i.fas.fa-images
+    = link_to 'Send', '#', class: 'send'
