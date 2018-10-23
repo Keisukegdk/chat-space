@@ -1,0 +1,34 @@
+.message-form {
+  height: 50px;
+  width: 80%;
+  margin: 20px 0 20px 40px;
+  padding-left: 10px;
+  border: none;
+  color: #434A54;
+  font-size: 16px;
+  float: left;
+}
+.file-form{
+  height: 50px;
+  position: absolute;
+  bottom: 7px;
+  right: 180px;
+  &__imege {
+  }
+  .hidden {
+    display: none;
+  }
+}
+.form__submit {
+  height: 50px;
+  background-color: #38AEF0;
+  border: none;
+  color: #FFFFFF;
+  float: left;
+  font-size: 16px;
+  // margin: 20px 0 20px 20px;
+  padding: 0 25px;
+  position: absolute;
+  bottom: 20px;
+  right: 40px;
+}
