@@ -1,0 +1,10 @@
+.message
+  .message__name
+    = message.user.name
+  .message__date
+    = message.created_at
+  .message__text
+    = message.body
+  .image_present
+    - if message.image.present?
+      = image_tag message.image , class: 'message-image'

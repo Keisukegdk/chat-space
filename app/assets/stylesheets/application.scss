@@ -1,10 +1,20 @@
-@import "./reset";
+//other
 @import "font-awesome";
+
+//config
+@import "config/reset";
 @import "config/variable";
 @import "config/colors";
-@import "side_content/side";
-@import "main_content/main";
-@import "./message";
+
+
+//modules
 @import "modules/flash";
 @import "modules/group";
 @import "modules/user";
+
+
+//shared
+@import "shared/main";
+@import "shared/form";
+@import "shared/message";
+@import "shared/side";
