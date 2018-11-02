@@ -8,10 +8,12 @@
     = render partial: 'shared/message', collection: @messages, as: :message
 
   .main_footer
-    = form_for [@group, @message] do |f|
+    = form_for [@group, @message], html: {id: 'new_message'} do |f|
       = f.text_field :body, class: 'message-form', placeholder: 'type a message'
       .file-form
         = f.label :image, class: 'file-form__image' do
           = fa_icon 'picture-o', class: 'icon'
           = f.file_field :image, class: 'hidden'
       = f.submit 'Send', class: 'form__submit'
+
+
