@@ -1,8 +1,12 @@
 .main_content
   .main_header
     = link_to 'Edit', '#', class: 'edit'
-    %h3.group_name テスト１
-    %p.member_name Member : ゴウダケイスケ
+    %h3.group_name
+      = @group.name
+    %p.member_name
+      Member:
+      = @group.users.pluck(:name).join(",")
+
 
   .message
     = render partial: 'shared/message', collection: @messages, as: :message
