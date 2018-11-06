@@ -5,7 +5,7 @@
   overflow: scroll;
   position: relative;
   .message-content {
-    padding: 10px 40px 20px 40px;
+    padding: 10px 40px 10px 40px;
     .message__name {
       font-size: 16px;
       font-weight: bold;
@@ -23,8 +23,11 @@
       color: #434A54;
     }
     .message-image{
-    height: 250px;
-    width: 200px;
+      height: 250px;
+      width: 200px;
+    }
+    .none {
+      display: none;
     }
   }
 }

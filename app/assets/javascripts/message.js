@@ -1,28 +1,47 @@
 $(function() {
 
+  //HTMLの生成
   function buildHTML(message) {
-  var insertImage = '';
-  if (message.image.url) {
-    insertImage = `<img src="${message.image}">`;
+    var insertImage = '';
+    if (message.image === null) {
+      insertImage = `<img src="${message.image}" class="none" >`;
+    }else{
+      insertImage = `<img src="${message.image}" class="message-image" >`;
+    }
+    var html = `
+      <div class="message-content" message-id="${message.id}">
+        <p class="message__name"> ${message.name}</p>
+        <p class="message__date"> ${message.date}</p>
+        <p class="message__text"> ${message.body} </p>
+        ${insertImage}
+      </div>`;
+    return html
   }
-  var html = `
-    <div class="message__name"> ${message.name} </div>
-    <div class="message__name"> ${message.created_at} </div>
-    <div class="message__name"> ${message.body} </div>
-    ${insertImage}
-    `
-  return html;
-  }
+
+  // 非同期通信
   $('#new_message').on('submit', function(e) {
+    e.preventDefault();
+    var formdata = new FormData(this);
+    var url = $(this).attr('action')
+
+    $.ajax({
+      url: url,
+      type: "POST",
+      data: formdata,
+      dataType: 'json',
+      processData: false,
+      contentType: false
+    })
     .done(function(data){
-    var html = buildHTML(data);
-    $('.message').append(html)
-    $('.message__name').val('')
-    $('.message__created_at').val('')
-    $('.message__body').val('')
+      console.log(data)
+      var html = buildHTML(data);
+      console.log(html)
+      $('.message').append(html);
+      $('.message-form').val('');
     })
-    .fail(function(){
+    .fail(function(data){
     alert('error');
-    })
+    });
+    return false;
   });
 });

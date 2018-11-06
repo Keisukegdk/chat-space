@@ -3,7 +3,7 @@
     = link_to 'Edit', '#', class: 'edit'
     %h3.group_name
       = @group.name
-    %p.member_name
+    %h2.member_name
       Member:
       = @group.users.pluck(:name).join(",")
 
