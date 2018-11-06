@@ -18,7 +18,7 @@ $(function() {
     return html
   }
 
-  // 非同期通信
+  // チャット投稿の非同期の記述
   $('#new_message').on('submit', function(e) {
     e.preventDefault();
     var formdata = new FormData(this);
@@ -33,11 +33,10 @@ $(function() {
       contentType: false
     })
     .done(function(data){
-      console.log(data)
       var html = buildHTML(data);
-      console.log(html)
       $('.message').append(html);
       $('.message-form').val('');
+      $('.hidden').val('');
     })
     .fail(function(data){
     alert('error');
