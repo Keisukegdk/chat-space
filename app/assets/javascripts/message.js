@@ -37,6 +37,12 @@ $(function() {
       $('.message').append(html);
       $('.message-form').val('');
       $('.hidden').val('');
+      // submitボタンが使えないのを解除する
+
+      $('.form__submit').attr('disabled', false);
+
+      //最下部までスクロールする
+      $('.message').animate({ scrollTop: $('.message')[0].scrollHeight });
     })
     .fail(function(data){
     alert('error');
