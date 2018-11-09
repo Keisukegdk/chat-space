@@ -1,14 +1,18 @@
 .main_content
   .main_header
     = link_to 'Edit', '#', class: 'edit'
-    %h3.group_name テスト１
-    %p.member_name Member : ゴウダケイスケ
+    %h3.group_name
+      = @group.name
+    %h2.member_name
+      Member:
+      = @group.users.pluck(:name).join(",")
+
 
   .message
     = render partial: 'shared/message', collection: @messages, as: :message
 
   .main_footer
-    = form_for [@group, @message] do |f|
+    = form_for [@group, @message], html: {id: 'new_message'} do |f|
       = f.text_field :body, class: 'message-form', placeholder: 'type a message'
       .file-form
         = f.label :image, class: 'file-form__image' do
