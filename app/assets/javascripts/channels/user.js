@@ -1,5 +1,6 @@
 $(function() {
 
+///インクリメンタルサーチ
   var search_list = $("#user-search-result");
 
     function appendUser(user) {
@@ -45,4 +46,29 @@ $(function() {
     window.alet('ユーザー検索に失敗しました')
    })
   });
+
+////ユーザ追加の実装
+var add_member = $("#chat-group-users")
+
+function appendMember(user) {
+  var html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
+                <input name='group[user_ids][]' type='hidden' value='${ user.userId }'>
+                <p class='chat-group-user__name'>${ user.userName }</p>
+                <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
+              </div>`
+    add_member.append(html);
+}
+
+  $(document).on("click", ".chat-group-user__btn--add", function() {
+    var user = $(this).data();
+    console.log(user)
+    appendMember(user);
+    $(this).parent().remove();
+  });
+
+  $(document).on("click", ".chat-group-user__btn--remove",function() {
+    $(this).parent().remove();
+  })
+
 });
+
