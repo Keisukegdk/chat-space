@@ -28,11 +28,11 @@
       #chat-group-users
         - group.users.each do |user|
           #chat-group-user-8.chat-group-user.clearfix.js-chat-member
-            = f.text_field 'user_ids', :value => "#{ user.id }", :type => "hidden"
+            = f.hidden_field 'user_ids', value: "user.id"
             %p.chat-group-user__name
               = user.name
             .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn
-              = link_to('削除')
+              = link_to '削除'
 
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
