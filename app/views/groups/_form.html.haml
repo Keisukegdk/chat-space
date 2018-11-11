@@ -33,7 +33,9 @@
             = f.text_field 'user_ids', :value => "#{ user.id }", :type => "hidden"
             %p.chat-group-user__name
               = user.name
-            %a.user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除
+            .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn
+              = link_to("削除")
+
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
     .chat-group-form__field--right
