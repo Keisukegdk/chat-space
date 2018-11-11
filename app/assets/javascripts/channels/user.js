@@ -31,7 +31,6 @@ $(function() {
     })
 
    .done(function(users) {
-    console.log(users)
      $("#user-search-result").empty();
      if (users.length !== 0) {
        users.forEach(function(user){
@@ -43,7 +42,7 @@ $(function() {
      }
     })
    .fail(function(){
-    window.alet('ユーザー検索に失敗しました')
+    alert('ユーザー検索に失敗しました')
    })
   });
 
@@ -68,6 +67,5 @@ function appendMember(user) {
   $(document).on("click", ".chat-group-user__btn--remove",function() {
     $(this).parent().remove();
   })
-
 });
 
