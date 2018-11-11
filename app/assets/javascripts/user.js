@@ -18,6 +18,8 @@ $(function() {
           search_list.append(html);
         }
 
+  var add_member = $("#chat-group-users")
+
   $(".chat-group-form__input").on("keyup", function() {
     var input = $("#user-search-field").val();
 
@@ -26,8 +28,6 @@ $(function() {
       url: '/users',
       data: { keyword: input },
       dataType: 'json',
-      processData: false,
-      contentType: false
     })
 
    .done(function(users) {
@@ -47,8 +47,6 @@ $(function() {
   });
 
 ////ユーザ追加の実装
-var add_member = $("#chat-group-users")
-
 function appendMember(user) {
   var html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
                 <input name='group[user_ids][]' type='hidden' value='${ user.userId }'>
