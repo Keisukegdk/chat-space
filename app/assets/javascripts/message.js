@@ -1,6 +1,5 @@
 $(function() {
 
-  //HTMLの生成
   function buildHTML(message) {
     var insertImage = '';
     if (message.image === null) {
@@ -18,7 +17,11 @@ $(function() {
     return html
   }
 
-  // チャット投稿の非同期の記述
+  function appendHTML(html) {
+    $('.message').append(html);
+    $('.message').animate({ scrollTop: $('.message')[0].scrollHeight });
+  }
+
   $('#new_message').on('submit', function(e) {
     e.preventDefault();
     var formdata = new FormData(this);
@@ -34,9 +37,8 @@ $(function() {
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.message').append(html);
-        document.getElementById("new_message").reset();
-      $('.message').animate({ scrollTop: $('.message')[0].scrollHeight });
+      appendHTML(html)
+      document.getElementById("new_message").reset();
     })
     .fail(function(data){
     alert('error');
@@ -44,10 +46,8 @@ $(function() {
     return false;
   });
 
-//自動更新機能を実装する
   var interval = setInterval(function() {
     if (location.href.match(/\/groups\/\d+\/messages/)){
-      $(".message").animate({scrollTop:$('.message')[0].scrollHeight});
       var content_number = $('.message-content').length;
       var latest_message_id = (118 + content_number -1 );
       //過去のテストをしていた時に何度もデータを書いたのでidがずれているため、調整で書いています。本来は必要ないです。
@@ -62,14 +62,12 @@ $(function() {
     .done(function(data) {
       data.forEach(function(message) {
         var html = buildHTML(message);
-        $('.message').append(html);
-        $(".message").animate({scrollTop:$('.messages')[0].scrollHeight});
+        appendHTML(html)
       })
     })
     .fail(function(data){
     alert('error');
     });
-
     } else {
         clearInterval(interval);
       }
