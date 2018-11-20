@@ -38,7 +38,7 @@ $(function() {
     .done(function(data){
       var html = buildHTML(data);
       appendHTML(html)
-      document.getElementById("new_message").reset();
+      $("new_message")[0].reset();
     })
     .fail(function(data){
     alert('error');
