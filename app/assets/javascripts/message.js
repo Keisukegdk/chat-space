@@ -38,7 +38,7 @@ $(function() {
     .done(function(data){
       var html = buildHTML(data);
       appendHTML(html)
-      $("new_message")[0].reset();
+      $("#new_message")[0].reset();
     })
     .fail(function(data){
     alert('error');
@@ -49,8 +49,7 @@ $(function() {
   var interval = setInterval(function() {
     if (location.href.match(/\/groups\/\d+\/messages/)){
       var content_number = $('.message-content').length;
-      var latest_message_id = (118 + content_number -1 );
-      //過去のテストをしていた時に何度もデータを書いたのでidがずれているため、調整で書いています。本来は必要ないです。
+      var latest_message_id = $('.message-content').last().attr('id')
 
     $.ajax({
       url: location.href,
