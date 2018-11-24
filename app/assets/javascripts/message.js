@@ -48,7 +48,8 @@ $(function() {
 
   var interval = setInterval(function() {
     if (location.href.match(/\/groups\/\d+\/messages/)){
-      var content_number = $('.message-content').length;
+      //$('.message').animate({ scrollTop: $('.message')[0].scrollHeight });
+      //var content_number = $('.message-content').length;
       var latest_message_id = $('.message-content').last().attr('id')
 
     $.ajax({
