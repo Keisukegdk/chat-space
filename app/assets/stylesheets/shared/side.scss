@@ -1,37 +1,45 @@
-.side_content {
+.side-bar {
   height: 100%;
   width: 300px;
   float: left;
-  .side_top {
+  .header {
     height: 100px;
     background-color: #253141;
+    line-height: 100px;
     color: $text-color;
-    .user_name {
-      line-height: 90px;
+    &__name {
+      display: inline-block;
       font-weight: bold;
       font-size: 16px;
       margin: 0 20px;
-      float: left;
+    }
+    &__lists {
+      display: inline-block;
+      float: right;
+    .list {
+      display: inline-block;
     }
     .icon{
-      line-height: 90px;
+      line-height: 100px;
       float: right;
       color: $text-color;
       padding-right:20px;
     }
   }
-  .group_list {
+}
+  .groups {
     height: calc(100% - 100px);
     background-color: #2f3e51;
     .group {
-      color: $text-color;
       padding: 20px;
-      &__group_name{
-      padding-bottom: 5px;
+      &__name {
+      color: $text-color;
       font-size: 15px;
       }
-      &__group_message{
+      &__message {
+      color: $text-color;
       font-size: 10px;
+      margin: 5px 0 50px 0;
       }
     }
   }
