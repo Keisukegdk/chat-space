@@ -19,7 +19,7 @@ $(function() {
 
   function appendHTML(html) {
     $('.message').append(html);
-    $('.message').animate({ scrollTop: $('.message')[0].scrollHeight });
+    //$('.message').animate({ scrollTop: $('.message')[0].scrollHeight });
   }
 
   $('#new_message').on('submit', function(e) {
