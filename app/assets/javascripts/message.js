@@ -19,7 +19,7 @@ $(function() {
 
   function appendHTML(html) {
     $('.message').append(html);
-    //$('.message').animate({ scrollTop: $('.message')[0].scrollHeight });
+    $('.message').animate({ scrollTop: $('.message')[0].scrollHeight });
   }
 
   $('#new_message').on('submit', function(e) {
@@ -48,7 +48,7 @@ $(function() {
 
   var interval = setInterval(function() {
     if (location.href.match(/\/groups\/\d+\/messages/)){
-      $('.message').animate({ scrollTop: $('.message')[0].scrollHeight });
+      //$('.message').animate({ scrollTop: $('.message')[0].scrollHeight });
       var latest_message_id = $('.message-content').last().attr('id')
 
     $.ajax({
