@@ -45,3 +45,12 @@ namespace :deploy do
   after :finishing, 'deploy:cleanup'
 end
 
+
+
+/* <system section="theme" selected="evergreen"> */
+@import "/css/theme/evergreen/evergreen.css";
+/* </system> */
+
+/* <system section="background" selected="f5f5f5"> */
+body{background:#f5f5f5;}
+/* </system> */
